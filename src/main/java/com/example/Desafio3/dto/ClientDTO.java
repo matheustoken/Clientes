@@ -1,15 +1,24 @@
 package com.example.Desafio3.dto;
 
 import com.example.Desafio3.entities.Client;
+import jakarta.validation.constraints.*;
+import org.apache.logging.log4j.message.Message;
 
 import java.util.Date;
 
 public class ClientDTO {
     private Long id;
+
+    @NotBlank(message = "Campo Requerido")
     private String name;
+    @NotNull(message = "O CPF não pode ser nulo.")
+    @Pattern(regexp = "\\d{11}", message = "O CPF deve conter exatamente 11 dígitos numéricos.")
     private String cpf;
+    @Positive(message = "Deve ser valor maior que zero")
     private Double income;
+    @PastOrPresent
     private Date birthDate;
+    @Positive(message = "Deve ser positivo ou nulo")
     private Integer children;
 
     public ClientDTO(){

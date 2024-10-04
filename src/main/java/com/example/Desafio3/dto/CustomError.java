@@ -18,38 +18,35 @@ public class CustomError {
         this.status = status;
     }
 
-    public CustomError(Instant now, int value, String message, String requestURI) {
-    }
-
     public Instant getTimestamp() {
         return timestamp;
-    }
-
-    public String getPath() {
-        return path;
-    }
-
-    public String getError() {
-        return error;
-    }
-
-    public Integer getStatus() {
-        return status;
     }
 
     public void setTimestamp(Instant timestamp) {
         this.timestamp = timestamp;
     }
 
+    public String getPath() {
+        return path;
+    }
+
     public void setPath(String path) {
         this.path = path;
     }
 
-    public void setError(String error) {
-        this.error = error;
+    public Integer getStatus() {
+        return status;
     }
 
     public void setStatus(Integer status) {
         this.status = status;
+    }
+
+    public String getError() {
+        return error;
+    }
+
+    public void setError(String error) {
+        this.error = error;
     }
 }
